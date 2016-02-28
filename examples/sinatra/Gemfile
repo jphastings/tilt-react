@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+gem 'sinatra', '~> 1.4'
+gem 'capybara', '~> 2.6'
+gem 'rspec', '~> 3.4'
+gem 'rspec-its', '~> 1.2'
+gem 'rspec-as_fixture', '~> 0.1'
+gem 'tilt-react', path: '../..'
