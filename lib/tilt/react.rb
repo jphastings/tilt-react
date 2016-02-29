@@ -26,17 +26,19 @@ module Tilt
       @@context
     end
 
-    def self.load_context(js_libs = [])
-      # Include the tilt-react bootstrap JS
-      js_libs = [*js_libs] + [File.expand_path('../../ext/', __dir__)]
-
+    def self.js_libs=(js_dirs)
       # Expand the js_libs to be the root and all folders in it, because CommonJS.rb doesn't do this
-      all_libs = js_libs.map { |dir|
+      @js_libs = [*js_dirs].map { |dir|
         [
           dir,
           Dir.glob("#{dir}/*").select { |f| File.directory? f }
         ]
       }.flatten.compact
+    end
+
+    def self.load_context
+      # Include the tilt-react bootstrap JS
+      all_libs = @js_libs + [File.expand_path('../../ext/', __dir__)]
 
       @@context = CommonJS::Environment.new(
         V8::Context.new,
@@ -58,28 +60,36 @@ module Tilt
         if files.any?
           FileUtils.mkdir_p(File.dirname(target))
 
-          compile(files, target).each do |file|
+          compile(files).each do |file, es5|
             @@bundle_lookup[file] = target
           end
+          
+          # FIXME: Browserify the es5
+          File.open(target, 'w') {}
         end
       end
     end
 
     def self.compile(files)
       @@bundle_lookup ||= {}
-      # FIXME: Create JS file for client side
 
       [*files].map do |file|
         file = File.expand_path(file)
         next if @@bundle_lookup[file]
 
-        export_as = File.basename(file, '.jsx').split('_').map(&:capitalize).join
+        export_as = file_to_class_name(file)
         template = Tilt::BabelTemplate.new(file)
         es5 = template.render
         @@tilt_react_js.components[export_as] = context.require_string(export_as, es5)
         @@bundle_lookup[file] = true
-        file
+        [file, es5]
       end
+    end
+
+    private
+
+    def self.file_to_class_name(file)
+      File.basename(file, '.jsx').split('_').map(&:capitalize).join
     end
   end
 end

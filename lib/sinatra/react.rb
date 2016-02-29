@@ -31,7 +31,8 @@ module Sinatra
         # must wait until js_libs has content. 
         next unless config.settings.js_libs
 
-        Tilt::ReactTemplate.load_context(config.settings.js_libs)
+        Tilt::ReactTemplate.js_libs = config.settings.js_libs
+        Tilt::ReactTemplate.load_context
         Tilt::ReactTemplate.compile_bundles(config.settings.component_bundles.map { |glob, bundle|
           [
             File.expand_path(glob, config.settings.components),
