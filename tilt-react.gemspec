@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["JP Hastings-Spital"]
   spec.email         = ["jphastings@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Use React.js JSX files as view templates in Sinatra and other Tilt powered frameworks.}
+  spec.description   = %q{Render React.js JSX files with the Tilt templating system.}
+  spec.homepage      = "https://github.com/jphastings/tilt-react"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

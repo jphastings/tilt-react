@@ -1,0 +1,13 @@
+language: ruby
+rvm:
+- 2.3.0
+deploy:
+  provider: rubygems
+  api_key:
+  gem: tilt-react
+  on:
+    tags: true
+    repo: jphastings/tilt-react
+addons:
+  code_climate:
+    secure: "NLJ1KBW8QcBQLY2R8qYgr+M4MgaGr1NZFBBffPvsQf/fqHo+n26B+z42SoMQIUaGm40Y9fDB3FgloumG5GGCNsdQ+6mIec2948Fjh9BsBy8ZDdpOypcsX5cAtBwHAhOa1tUv/nOU1udMEExT9dFQ7FCae+Z/ivw2EvpgaZuOd5bDwZWvnPiDAybVwlwusTWOPxQhTR3OEd1y0WnXfoVtdT0ACdp6mLxzy7ERs8uEuoOBHq/Q4Ai807beseNtZs9H+2K4L48fi3u65/p7c9WpyzCUVeEpUXPBjLl43NzWXqC8Zj6sOL5gRzj4gV3y7a+NTBzDyOHEAqNvnNe83AHS38AMLidvbmnLWSf2GvKBHr9oSdiQzyBxiHVdZXgP/1FjrVu2JC7MAYVKz5va9Pri4Ey38qjdT1JrR+9meXCq9nTMyPVWxdiO6AysoXBG+7YaNqZjvvxpT60UfKc9pzYf+YxHNEgmYvK0AbjiY2A+wX7f5+mT/BgwKIr6LHSy136Y9IuduUKfuhsdeKn1LBD68ox6pmB24oz2XNJPJ2cLPgIARGMj55ZYg/3zrccaqa/sHBp/XvQ7r+MsR6gCZ7Kedfhevq7JimSsbN6FkNrzIPlzAMxOIQCuSLtwc52FVMMrznmihbN2TmWssdBvAyua5dkqlwqgOUYKDP69m3gI2Bc="
