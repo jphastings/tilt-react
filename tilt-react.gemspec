@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.9'
   spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.4'
   spec.add_development_dependency 'nokogiri', '~> 1.6'
   spec.add_development_dependency 'capybara', '~> 2.6'
   spec.add_development_dependency 'rspec-as_fixture', '~> 0.1'
