@@ -19,8 +19,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'babel-transpiler', '~> 0.7'
-  spec.add_dependency 'commonjs', '~> 0.2'
+  spec.add_dependency 'rack-accept', '~> 0.4'
   spec.add_dependency 'therubyracer', '~> 0.12'
 
   spec.add_development_dependency 'bundler', '~> 1.9'
