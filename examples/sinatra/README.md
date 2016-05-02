@@ -4,15 +4,18 @@ This example app demonstrates how to use React Components as view templates in y
 
 ## Go go gadget example app
 
-You'll need to download React in order to get this example to work. [Install NPM](https://docs.npmjs.com/getting-started/installing-node), install the npm dependencies, then run the app:
+You'll need to download NPM in order to get this example to work. [Install NPM](https://docs.npmjs.com/getting-started/installing-node), run the setup tasks, then run the app:
 
 ```bash
-npm install
+rake react:setup:npm
+rake react:compile
 rackup
 ```
 You should be set! Try visiting http://127.0.0.1:9292/?name=world
 
 ## Writing unit tests for your components
+
+_Tests aren't working right now - webpack support is a WIP!_
 
 There are also simple tests demonstrating how to write unit tests for the HTML your components produce.
 

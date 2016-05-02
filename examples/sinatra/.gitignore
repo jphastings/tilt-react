@@ -1,2 +1,4 @@
 /node_modules/
-/public/js/components.js
+/public/js/*
+package.json
+webpack.config.js

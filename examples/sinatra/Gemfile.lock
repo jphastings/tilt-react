@@ -2,18 +2,13 @@ PATH
   remote: ../..
   specs:
     tilt-react (0.1.0)
-      babel-transpiler (~> 0.7)
-      commonjs (~> 0.2)
+      rack-accept (~> 0.4)
       therubyracer (~> 0.12)
 
 GEM
   remote: https://rubygems.org/
   specs:
     addressable (2.4.0)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
     capybara (2.6.2)
       addressable
       mime-types (>= 1.16)
@@ -21,9 +16,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    commonjs (0.2.7)
     diff-lcs (1.2.5)
-    execjs (2.6.0)
     libv8 (3.16.14.13)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
@@ -32,6 +25,8 @@ GEM
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     rack (1.6.4)
+    rack-accept (0.4.5)
+      rack (>= 0.4)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -76,3 +71,6 @@ DEPENDENCIES
   rspec-its (~> 1.2)
   sinatra (~> 1.4)
   tilt-react!
+
+BUNDLED WITH
+   1.11.2

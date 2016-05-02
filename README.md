@@ -2,11 +2,12 @@
 
 Use react components as view templates in Sinatra and other frameworks using Tilt.
 
+This new imroved version uses webpack; which means both server and client side render is supported! There are helper functions which will allow single-page-like AJAX re-rendering of the page with History API integration.
+
 Bonus feature: RSpec::React, a helpful framework for writing unit tests for the server generated HTML your components produce.
 
 This is proof-of-concept code, there are some limitations:
 
-* Only server-side rendering is supported at the moment
 * There's some hacky code around the place (search for FIXME)
 * There aren't any tests for the actual library…
 
